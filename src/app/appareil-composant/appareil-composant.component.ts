@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AppareilComposantComponent implements OnInit {
  @Input() nomAppareil: string;
- @Input etatAppareil: string;
+ @Input() etatAppareil:string;
   constructor() { }
 
   ngOnInit(): void {
