@@ -292,19 +292,28 @@
 
 <!-- Toolbar -->
 <div style = "padding-right:10px;padding-left:10px"class="toolbar" role="banner">
-
   <span>Initiation à angularJS</span>
     <div class="spacer"></div>
-
 </div>
 
 <div class="container" style="padding-top:100px">
   <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-4">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div class="col-md-8">
+      <p><strong>Dernière mise à jour :</strong> {{lastUpdate | async | date:'short'}}</p>
         <ul class="list-group">
-              <app-appareil-composant [nomAppareil]="appareilFirst" [etatAppareil]="'Eteint'"></app-appareil-composant>
+
+             <!-- <app-appareil-composant [nomAppareil]="appareilFirst" [etatAppareil]="'Eteint'"></app-appareil-composant>
               <app-appareil-composant [nomAppareil]="appareilSecond" [etatAppareil]="'Allumer'"></app-appareil-composant>
-              <app-appareil-composant [nomAppareil]="appreilThird" [etatAppareil]="'Eteint'"></app-appareil-composant>
+              <app-appareil-composant [nomAppareil]="appreilThird" [etatAppareil]="'Eteint'"></app-appareil-composant>-->
+
+              <app-appareil-composant
+              *ngFor = "let appareil of appareils"
+              [nomAppareil] = "appareil.nomAppareil"
+              [etatAppareil]="appareil.etatAppareil">
+              </app-appareil-composant>
         </ul><br>
         <button type="button" name="button" class="btn btn-success"
         [disabled]="!isAuth"

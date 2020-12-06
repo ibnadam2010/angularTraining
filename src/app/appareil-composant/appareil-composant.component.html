@@ -1,3 +1,6 @@
-<li class="list-group-item">Appareil {{nomAppareil}}--Etat : {{ getEtat() }}
+<li [ngClass] = "{'list-group-item':true,'list-group-item-success': getEtat()=='Allumer', 'list-group-item-danger':getEtat()=='Eteint'}">
+<div style = "width:10px;height:10px;background-color:red;margin-bottom:5px" *ngIf = "getEtat()==='Eteint'"></div>
+<div style = "width:10px;height:10px;background-color:green" *ngIf = "getEtat()==='Allumer'"></div>
+<h6 [ngStyle]="{color:getColor()}" >Appareil : {{nomAppareil}} - Etat : {{ getEtat() }}</h6>
 <input type="text" class="form-control" [(ngModel)]="nomAppareil">
 </li>

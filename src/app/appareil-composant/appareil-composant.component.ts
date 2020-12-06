@@ -17,4 +17,12 @@ export class AppareilComposantComponent implements OnInit {
     return this.etatAppareil;
   }
 
+  getColor(){
+    if(this.etatAppareil=='Allumer'){
+      return 'green';
+    }else if (this.etatAppareil=='Eteint'){
+      return 'red';
+    }
+  }
+
 }
