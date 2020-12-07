@@ -8,6 +8,7 @@ import { PremierComposantComponent } from './premier-composant/premier-composant
 import { AppareilComposantComponent } from './appareil-composant/appareil-composant.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import {AppareilService} from './services/appareil.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {AppareilService} from './services/appareil.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
   AppareilService
